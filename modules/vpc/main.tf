@@ -1,41 +1,49 @@
+#----------VPC----------
 resource "aws_vpc" "main" {
     
     tags = {
-        Name = "devops-web-nginx-vpc"
+        Name = "${var.project_name}-vpc"
     }
 
-    cidr_block = "10.0.0.0/16"
+    cidr_block = var.aws_vpc_cidr
+
+    enable_dns_support = true 
+    enable_dns_hostnames = true 
   
 }
 
+#----------IGW----------
 resource "aws_internet_gateway" "main" {
 
     tags = {
-        Name = "devops-web-nginx-igw"
+        Name = "${var.project_name}-igw"
     }
 
     vpc_id = aws_vpc.main.id
   
 }
 
+#----------Subnet (Public Subnet)----------
 resource "aws_subnet" "main" {
+
     vpc_id = aws_vpc.main.id
 
     tags = {
-        Name = "devops-web-nginx-public-subnet-1"
+        Name = "${var.project_name}-public-subnet-1"
     } 
 
     availability_zone = var.az
 
-    cidr_block = "10.0.1.0/24"
+    cidr_block = var.public_subnet_cidr
 
     map_public_ip_on_launch = true
 
 }
 
-resource "aws_route_table" "main" {
+#----------Route Table (Public Route Table----------
+resource "aws_route_table" "public" {
     tags = {
-        Name = "devops-web-nginx-rt"
+        Name = "${var.project_name}-public-rt"
     }
 
     vpc_id = aws_vpc.main.id
@@ -47,10 +55,12 @@ resource "aws_route_table" "main" {
 
 }
 
-resource "aws_route_table_association" "rt_assoc_with_public_subnet" {
-    route_table_id = aws_route_table.main.id 
+#----------Route Table Association with Subent(Public Subnet)
+resource "aws_route_table_association" "public" {
 
-    subnet_id = aws_subnet.main.id
+    route_table_id = aws_route_table.public.id 
+
+    subnet_id = aws_subnet.public.id
   
 }
 
@@ -115,7 +125,7 @@ resource "aws_instance" "main" {
 
     instance_type = "t2.micro"
 
-    key_name = "devops-terminal-key"
+    key_name = "devops-zubair-terminal-key"
 
     subnet_id = aws_subnet.main.id 
 
