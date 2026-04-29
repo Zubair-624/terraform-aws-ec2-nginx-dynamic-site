@@ -8,32 +8,36 @@ echo " Starting user_data.sh"
 echo " Time: $(date)"
 echo "========================================="
 
-echo "[1/5] Updating system packages..."
+echo "[1/6] Updating system packages..."
 apt-get update -y
 apt-get upgrade -y
 echo "System updated"
 
-echo "[2/5] Installing Nginx and AWS CLI..."
-apt-get install -y nginx awscli
-echo "Nginx and AWS CLI installed"
+echo "[2/6] Installing Nginx and dependencies..."
+apt-get install -y nginx unzip curl
+echo "Nginx installed"
 
-echo "[3/5] Starting Nginx..."
+echo "[3/6] Installing AWS CLI v2..."
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install
+rm -rf awscliv2.zip aws/
+echo "AWS CLI v2 installed"
+
+echo "[4/6] Starting Nginx..."
 systemctl start nginx
 systemctl enable nginx
 echo "Nginx started"
 
-echo "[4/5] Downloading website from S3..."
-
+echo "[5/6] Downloading website from S3..."
 rm -rf /var/www/html/*
-
 aws s3 sync s3://devops-zubair-terraform-state/website/ /var/www/html/ \
     --region us-east-1
-
 chown -R www-data:www-data /var/www/html
 chmod -R 755 /var/www/html
-echo "Website downloaded and deployed"
+echo "Website deployed"
 
-echo "[5/5] Restarting Nginx..."
+echo "[6/6] Restarting Nginx..."
 systemctl restart nginx
 echo "Nginx restarted"
 

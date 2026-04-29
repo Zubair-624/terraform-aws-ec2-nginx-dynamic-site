@@ -6,7 +6,7 @@ public_subnet_cidr = "10.0.1.0/24"
 
 az = "us-east-1a"
 
-ssh_cidr = "180.94.28.0/24"
+ssh_cidr = "103.83.233.0/24"
 
 instance_type = "t2.micro"
 
