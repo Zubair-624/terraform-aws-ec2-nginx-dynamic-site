@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Zubair Mazumder</title>
+  <meta name="description" content="AWS and Terraform projects by Zubair Mazumder — production-grade cloud infrastructure built from scratch."/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">ZM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page">
+
+  <!-- ── Header ── -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="section-tag fade-up">Portfolio</div>
+    <h1 class="section-title fade-up delay-1">Projects built<br/>from scratch.</h1>
+    <p class="section-sub fade-up delay-2">Real infrastructure projects — no tutorials, no shortcuts. Every project follows professional DevOps standards.</p>
+  </section>
+
+  <div class="divider" style="max-width: 1100px; margin: 0 auto;"></div>
+
+  <!-- ── Projects ── -->
+  <section class="section">
+
+    <!-- Project 1 — Featured -->
+    <div class="fade-up" style="background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: all var(--transition);">
+      <!-- Accent glow -->
+      <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%); pointer-events: none;"></div>
+      <div style="position: absolute; top: 1.5rem; right: 1.5rem;">
+        <span style="font-size: 11px; padding: 4px 12px; border-radius: 100px; background: rgba(0,229,255,0.1); color: var(--accent); border: 1px solid rgba(0,229,255,0.2); font-weight: 500; letter-spacing: 0.5px;">Featured</span>
+      </div>
+      <div style="display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(0,229,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 10px;">AWS Two-Tier Production Infrastructure</h2>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">A fully modular, production-grade AWS infrastructure built with Terraform. Includes custom VPC, public subnet, Internet Gateway, route tables, security groups, EC2 with Ubuntu 24.04, Nginx web server, remote S3 backend with DynamoDB state locking, and automated website deployment via S3.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem;">
+            <span class="tag">Terraform</span>
+            <span class="tag">AWS VPC</span>
+            <span class="tag">EC2</span>
+            <span class="tag">Nginx</span>
+            <span class="tag">S3 Backend</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">Ubuntu 24.04</span>
+            <span class="tag">Bash</span>
+          </div>
+          <a href="https://github.com/Zubair-624/aws-production-two-tier-infrastructure" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+        </div>
+        <!-- Highlights -->
+        <div style="flex-shrink: 0; min-width: 220px;">
+          <div style="font-size: 12px; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Highlights</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> Modular Terraform structure
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> Remote S3 state backend
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> DynamoDB state locking
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> Auto website deployment
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> Secrets Manager for SSH
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+              <span style="color: var(--green); font-weight: 700;">✓</span> Full .gitignore + README
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 & 3 -->
+    <div class="grid-2">
+
+      <div class="card fade-up delay-1" style="padding: 2rem;">
+        <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(124,58,237,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 8px;">Reusable SSH Key Management</h3>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem;">One-time Terraform setup that generates an RSA 4096-bit key pair, registers it in AWS, and stores the private key securely in AWS Secrets Manager. Reusable across all future projects forever.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem;">
+          <span class="tag tag-purple">Terraform</span>
+          <span class="tag tag-purple">TLS Provider</span>
+          <span class="tag tag-purple">Secrets Manager</span>
+          <span class="tag tag-purple">AWS Key Pair</span>
+        </div>
+        <a href="https://github.com/Zubair-624" target="_blank" rel="noopener" style="font-size: 13px; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View on GitHub →</a>
+      </div>
+
+      <div class="card fade-up delay-2" style="padding: 2rem;">
+        <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(0,255,136,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 8px;">Terraform Remote Backend</h3>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem;">Centralized, reusable Terraform state management infrastructure. S3 bucket with versioning and encryption, DynamoDB table for state locking. One setup that serves all future Terraform projects.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem;">
+          <span class="tag tag-green">Terraform</span>
+          <span class="tag tag-green">S3</span>
+          <span class="tag tag-green">DynamoDB</span>
+          <span class="tag tag-green">Encryption</span>
+        </div>
+        <a href="https://github.com/Zubair-624" target="_blank" rel="noopener" style="font-size: 13px; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View on GitHub →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider" style="max-width: 1100px; margin: 0 auto;"></div>
+
+  <!-- ── GitHub CTA ── -->
+  <section class="section" style="text-align: center;">
+    <h2 class="section-title fade-up" style="margin-bottom: 1rem;">See all my work</h2>
+    <p class="fade-up delay-1" style="color: var(--text-muted); margin-bottom: 2rem;">All projects are open source and available on GitHub.</p>
+    <div class="fade-up delay-2" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://github.com/Zubair-624" target="_blank" rel="noopener" class="btn btn-primary">GitHub Profile →</a>
+      <a href="contact.html" class="btn btn-outline">Hire Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Zubair Mazumder. All rights reserved.</p>
+    <div style="display: flex; gap: 1.5rem;">
+      <a href="https://github.com/Zubair-624" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/zubairmazumder/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:zubairmazumder624@gmail.com">Email</a>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
