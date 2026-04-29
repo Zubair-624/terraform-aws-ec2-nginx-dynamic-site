@@ -47,5 +47,7 @@ resource "aws_instance" "main" {
 
     user_data = file(var.user_data_path)
 
+    iam_instance_profile = var.iam_instance_profile
+
   
 }
